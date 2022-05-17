@@ -7,21 +7,11 @@
  */
 
 #include <stdio.h>
-
-void call(int *n) {
-    *n = *n+9;
-}
+#include <string.h>
 
 int main() {
-    int n=5, a[5];
-    call(&n);
-    printf("%d\n",n);
-    for(int i=0; i<sizeof(a) / sizeof(int); i++) {
-        printf("%d\n", a[i]);
-    }
-    printf("\n\n\n\n\n");
-    printf("%d\n", '|');
-    printf("%d\n", ' ');
-    printf("%d\n", '\n');
+    char a[4] = "asdfcs", b[20];
+    strcpy(b, a);
+    printf("%s %s", a, b);
     return 0;
 }
