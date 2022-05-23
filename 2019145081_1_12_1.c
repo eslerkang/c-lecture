@@ -23,7 +23,7 @@ void buffer() {
 int main() {
     setvbuf(stdout, 0, _IONBF, 0);
     int i, j, len;
-    char string[61] = "", *format = "1234567890", choice;
+    char string[255] = "", *format = "1234567890", choice;
     cls();
     while(1) {
         printf("문자열을 입력하세요(60자 이하): ");
@@ -62,8 +62,8 @@ int main() {
                 putchar(string[(i+j)%60]);
             }
         else
-            for(j=60; j>0; j--) {
-                putchar(string[59-(i+j-1)%60]);
+            for(j=59; j>=0; j--) {
+                putchar(string[59-(i+j)%60]);
             }
         buffer();
         cls();
