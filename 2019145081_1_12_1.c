@@ -22,8 +22,8 @@ void buffer() {
 
 int main() {
     setvbuf(stdout, 0, _IONBF, 0);
-    int i, j, len, choice;
-    char string[61] = "", *format = "1234567890";
+    int i, j, len;
+    char string[61] = "", *format = "1234567890", choice;
     cls();
     while(1) {
         printf("문자열을 입력하세요(60자 이하): ");
@@ -45,9 +45,9 @@ int main() {
     buffer();
     cls();
     while(1) {
-        printf("왼쪽(0), 오른쪽(1) 선택: ");
-        scanf("%d", &choice);
-        if(choice == 0 || choice == 1) {
+        printf("왼쪽(l), 오른쪽(r) 선택: ");
+        scanf(" %c", &choice);
+        if(choice == 'l' || choice == 'r') {
             break;
         }
         printf("0, 1 중 하나만 입력하세요.\n");
@@ -57,7 +57,7 @@ int main() {
     for(i=0; ;i++) {
         printf("%10d%10d%10d%10d%10d%10d\n", 1, 2, 3, 4, 5, 6);
         printf("%s%s%s%s%s%s\n", format, format, format, format, format, format);
-        if(choice == 0)
+        if(choice == 'l')
             for(j=0; j<60; j++) {
                 putchar(string[(i+j)%60]);
             }
