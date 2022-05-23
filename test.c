@@ -10,8 +10,14 @@
 #include <string.h>
 
 int main() {
-    char a[4] = "asdfcs", b[20];
-    strcpy(b, a);
-    printf("%s %s", a, b);
-    return 0;
+    char string[61];
+    int i;
+    scanf("%[^\n]", string);
+    printf("%s\n", string);
+    for(i=0; string[i]!='\0'; i++) {
+        printf("%d ", string[i]);
+    }
+    if(!string[60]) {
+        printf("fyck");
+    }
 }
