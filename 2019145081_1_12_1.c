@@ -50,7 +50,7 @@ int main() {
         if(choice == 'l' || choice == 'r') {
             break;
         }
-        printf("0, 1 중 하나만 입력하세요.\n");
+        printf("r, l 중 하나만 입력하세요.\n");
     }
     buffer();
     cls();
